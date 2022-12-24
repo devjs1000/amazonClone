@@ -46,9 +46,29 @@ const Screens = () => {
               component={Home}
             />
 
-            <Tab.Screen name={'Account'} component={Account} />
-            <Tab.Screen name={'Cart'} component={Cart} />
-            <Tab.Screen name={'Menu'} component={Menu} />
+            <Tab.Screen name={'Account'} component={Account} 
+            options={{
+
+                tabBarIcon: ({color, size}) => (
+                  <Ion name={'person-outline'} size={size} color={color} />
+                ),
+              }}
+            />
+            <Tab.Screen name={'Cart'} component={Cart}  
+            options={{
+                tabBarIcon: ({color, size}) => (
+                  <Ion name={'cart-outline'} size={size} color={color} />
+                ),
+              }}
+            />
+            <Tab.Screen name={'Menu'} component={Menu} 
+            options={{
+
+                tabBarIcon: ({color, size}) => (
+                  <Ion name={'menu-outline'} size={size} color={color} />
+                ),
+              }}
+            />
           </Tab.Navigator>
         </NavigationContainer>
       )}
