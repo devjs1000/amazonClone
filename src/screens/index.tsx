@@ -10,6 +10,8 @@ import Home from './Home';
 import Account from './Account';
 import Cart from './Cart';
 import Menu from './Menu';
+import {NavBarForSearch} from '../components/NavBars';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Tab = createBottomTabNavigator();
 
@@ -30,7 +32,16 @@ const Screens = () => {
             screenOptions={{
               headerTitle: '',
             }}>
-            <Tab.Screen name={'home'} component={Home} />
+            <Tab.Screen
+              options={{
+                header: ({navigation}) => (
+                  <NavBarForSearch navigation={navigation} />
+                ),
+              }}
+              name={'home'}
+              component={Home}
+            />
+
             <Tab.Screen name={'Account'} component={Account} />
             <Tab.Screen name={'Cart'} component={Cart} />
             <Tab.Screen name={'Menu'} component={Menu} />
