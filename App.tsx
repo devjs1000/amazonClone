@@ -1,19 +1,15 @@
-import {View, Text, SafeAreaView} from 'react-native';
-import React, {useState} from 'react';
-import Splash from './src/screens/Splash';
+import {SafeAreaView} from 'react-native';
+import React from 'react';
+import Screens from './src/screens';
+import {Provider} from 'react-redux';
+import store from './src/states/store';
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
   return (
-    <SafeAreaView>
-      {loading ? (
-        <Splash />
-      ) : (
-        <View>
-          <Text>App</Text>
-        </View>
-      )}
-    </SafeAreaView>
+   
+      <Provider store={store}>
+        <Screens />
+      </Provider>
   );
 };
 
