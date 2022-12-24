@@ -8,6 +8,9 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
+import Ion from 'react-native-vector-icons/Ionicons';
+import MC from 'react-native-vector-icons/MaterialCommunityIcons';
+import { colors } from '../../constants/theme.constant';
 
 export const NavBarForSearch = ({navigation}: NavBarForSearchProps) => {
   return (
@@ -15,7 +18,7 @@ export const NavBarForSearch = ({navigation}: NavBarForSearchProps) => {
       <View style={styles.flexBox}>
         <View style={styles.container}>
           <TouchableOpacity style={[styles.button, styles.b1]}>
-            <Text>Se</Text>
+              <Ion name="search" size={25} />
           </TouchableOpacity>
 
           <TextInput
@@ -24,11 +27,11 @@ export const NavBarForSearch = ({navigation}: NavBarForSearchProps) => {
             style={styles.textInput}
           />
           <TouchableOpacity style={[styles.button, styles.b2]}>
-            <Text style={{color: 'gray'}}>Im</Text>
+              <MC name="google-lens" size={25} />
           </TouchableOpacity>
         </View>
         <TouchableOpacity style={styles.mic}>
-          <Text style={{color: 'gray'}}>Mi</Text>
+            <Ion name={'md-mic-outline'} size={35}  color={'black'} />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -37,7 +40,7 @@ export const NavBarForSearch = ({navigation}: NavBarForSearchProps) => {
 
 const styles = StyleSheet.create({
   statusBar: {
-    backgroundColor: 'rgb(157, 212, 222)',
+    backgroundColor: colors.primary,
   },
   textInput: {
     backgroundColor: 'white',
@@ -65,12 +68,12 @@ const styles = StyleSheet.create({
   },
   b1: {
     position: 'absolute',
-    left: 2,
+    left: 8,
     top: 2,
   },
   b2: {
     position: 'absolute',
-    right: 2,
+    right: 8,
     top: 2,
   },
   mic: {

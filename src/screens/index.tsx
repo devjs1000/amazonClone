@@ -12,7 +12,7 @@ import Cart from './Cart';
 import Menu from './Menu';
 import {NavBarForSearch} from '../components/NavBars';
 import {SafeAreaView} from 'react-native-safe-area-context';
-
+import Ion from 'react-native-vector-icons/Ionicons';
 const Tab = createBottomTabNavigator();
 
 const Screens = () => {
@@ -31,11 +31,15 @@ const Screens = () => {
           <Tab.Navigator
             screenOptions={{
               headerTitle: '',
+              tabBarActiveTintColor: 'black',
             }}>
             <Tab.Screen
               options={{
                 header: ({navigation}) => (
                   <NavBarForSearch navigation={navigation} />
+                ),
+                tabBarIcon: ({color, size}) => (
+                  <Ion name={'home-outline'} size={size} color={color} />
                 ),
               }}
               name={'home'}
