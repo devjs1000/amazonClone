@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
   textInput: {
     backgroundColor: 'white',
     padding: 10,
-    width: 300,
+    flexGrow: 2,
+    width: '100%',
     height: 50,
     margin: 'auto',
     borderColor: 'gray',
@@ -55,6 +56,9 @@ const styles = StyleSheet.create({
   },
   container: {
     position: 'relative',
+    height: 50,
+    marginLeft: 20,
+    width: '70%',
   },
   button: {
     zIndex: 1,
@@ -80,6 +84,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     display: 'flex',
+    flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },

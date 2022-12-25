@@ -10,6 +10,7 @@ import {
 import Ion from 'react-native-vector-icons/Ionicons';
 import AmazonPayQuickActionCard from '../../components/Cards/AmazonPayQuickActionCard';
 import CategoryCard from '../../components/Cards/CategoryCard';
+import RemindingActionsCard from '../../components/Cards/RemindingActionsCard';
 import SpecialDealCard from '../../components/Cards/SpecialDealCard';
 import Slide from '../../components/Slides';
 import {colors} from '../../constants/theme.constant';
@@ -64,23 +65,36 @@ const Home = () => {
       <Slide>
         <SpecialDealCard />
       </Slide>
-      <View style={styles.quickAction}>
-        <AmazonPayQuickActionCard />
-        <View style={styles.keepShopping}>
-          <Text
-            style={{
-              fontSize: 16,
-            }}>
-            Keep Shopping for
-          </Text>
-          <Image
-            source={{
-              uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTos0YvXMjH04jCStDXEYnsj4MG7YX8BDZPrQ&usqp=CAU',
-            }}
-            style={styles.productImage}
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <View style={styles.quickAction}>
+          <AmazonPayQuickActionCard />
+          <RemindingActionsCard
+            title={'Keep Shopping'}
+            uri={
+              'https://image01.realme.net/general/20220713/1657684351499.png.webp'
+            }
           />
+           <RemindingActionsCard
+            title={'Pick up where you left off'}
+            uri={
+              'https://dlcdnwebimgs.asus.com/gain/e82d30d3-b305-4249-8b70-9fbf4eb4fafd/'
+            }
+          />
+           <RemindingActionsCard
+            title={'Explore more'}
+            uri={
+              'https://pbs.twimg.com/media/FjIAc6MUcAIgMTF.jpg'
+            }
+          />
+           <RemindingActionsCard
+            title={''}
+            uri={
+              'https://tinuiti.com/wp-content/uploads/legacysitecontent/cpcs/posts_01/2019/02/14143037/amazon-basics-2.png'
+            }
+          />
+
         </View>
-      </View>
+      </ScrollView>
     </ScrollView>
   );
 };
@@ -112,19 +126,5 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     width: '100%',
-  },
-  keepShopping: {
-    backgroundColor: 'white',
-    width: 160,
-    height: 220,
-    marginHorizontal: 10,
-    padding: 10,
-    borderRadius: 6,
-  },
-  productImage: {
-    width: 140,
-    height: 100,
-    borderRadius: 6,
-    marginTop: 40,
   },
 });
