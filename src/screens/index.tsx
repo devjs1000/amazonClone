@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native';
+import {View, Text, AppState, StatusBar} from 'react-native';
 import React from 'react';
 import useSelect from '../hooks/useSelect';
 import Splash from './Splash';
@@ -13,6 +13,8 @@ import Menu from './Menu';
 import {NavBarForSearch} from '../components/NavBars';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Ion from 'react-native-vector-icons/Ionicons';
+import {colors} from '../constants/theme.constant';
+import NavBarBasic from '../components/NavBars/NavBarBasic';
 const Tab = createBottomTabNavigator();
 
 const Screens = () => {
@@ -24,6 +26,7 @@ const Screens = () => {
   });
   return (
     <>
+      <StatusBar barStyle="dark-content" backgroundColor={colors.primary} />
       {splash ? (
         <Splash />
       ) : (
@@ -46,24 +49,31 @@ const Screens = () => {
               component={Home}
             />
 
-            <Tab.Screen name={'Account'} component={Account} 
-            options={{
-
+            <Tab.Screen
+              name={'Account'}
+              component={Account}
+              options={{
                 tabBarIcon: ({color, size}) => (
                   <Ion name={'person-outline'} size={size} color={color} />
                 ),
+                header: ({navigation}) => (
+                  <NavBarBasic navigation={navigation} />
+                ),
               }}
             />
-            <Tab.Screen name={'Cart'} component={Cart}  
-            options={{
+            <Tab.Screen
+              name={'Cart'}
+              component={Cart}
+              options={{
                 tabBarIcon: ({color, size}) => (
                   <Ion name={'cart-outline'} size={size} color={color} />
                 ),
               }}
             />
-            <Tab.Screen name={'Menu'} component={Menu} 
-            options={{
-
+            <Tab.Screen
+              name={'Menu'}
+              component={Menu}
+              options={{
                 tabBarIcon: ({color, size}) => (
                   <Ion name={'menu-outline'} size={size} color={color} />
                 ),

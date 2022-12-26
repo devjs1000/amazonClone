@@ -8,8 +8,10 @@ import {
   Image,
 } from 'react-native';
 import Ion from 'react-native-vector-icons/Ionicons';
+import { xiaomi11T } from '../../assets';
 import AmazonPayQuickActionCard from '../../components/Cards/AmazonPayQuickActionCard';
 import CategoryCard from '../../components/Cards/CategoryCard';
+import DealsOfTheDay from '../../components/Cards/DealsOfTheDay';
 import RemindingActionsCard from '../../components/Cards/RemindingActionsCard';
 import SpecialDealCard from '../../components/Cards/SpecialDealCard';
 import Slide from '../../components/Slides';
@@ -95,6 +97,8 @@ const Home = () => {
 
         </View>
       </ScrollView>
+      <Image source={xiaomi11T} style={styles.banner} />
+      <DealsOfTheDay />
     </ScrollView>
   );
 };
@@ -127,4 +131,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
   },
+  banner: {
+    width: '100%',
+    height:  300,
+  }
 });
